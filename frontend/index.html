@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudyMate AI | Knowledge Assistant</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <div class="brand-icon">S</div>
+                <div>
+                    <h2>StudyMate AI</h2>
+                    <p>Your Learning Assistant</p>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <p class="section-label">WORKSPACE</p>
+
+                <button class="nav-item active">
+                    <span>⌂</span> Dashboard
+                </button>
+
+                <button class="nav-item" id="focusUpload">
+                    <span>▤</span> My Documents
+                </button>
+
+                <button class="nav-item" id="focusChat">
+                    <span>✉</span> AI Chat
+                </button>
+            </div>
+
+            <div class="sidebar-bottom">
+                <div class="status-indicator"></div>
+                <span>Local AI Assistant</span>
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <header class="topbar">
+                <div>
+                    <p class="top-label">YOUR PERSONAL STUDY SPACE</p>
+                    <h1>AI Knowledge Assistant</h1>
+                </div>
+
+                <div class="top-status">
+                    <span class="online-dot"></span>
+                    Ready to learn
+                </div>
+            </header>
+
+
+            <!-- WELCOME SECTION -->
+            <section class="welcome-section">
+
+                <div>
+                    <p class="welcome-tag">WELCOME TO STUDYMATE AI</p>
+
+                    <h2>
+                        Your notes.
+                        <span>Your knowledge.</span>
+                    </h2>
+
+                    <p>
+                        Upload your study materials and ask questions.
+                        Get answers based on your own documents.
+                    </p>
+                </div>
+
+                <div class="welcome-icon">✦</div>
+
+            </section>
+
+
+            <!-- DOCUMENT UPLOAD SECTION -->
+            <section class="content-card" id="documents">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Upload Your Documents</h2>
+                        <p>Add your notes to create your personal knowledge base.</p>
+                    </div>
+
+                    <span class="step-number">01</span>
+                </div>
+
+                <div class="upload-area" id="uploadArea">
+
+                    <div class="upload-icon">↑</div>
+
+                    <h3>Drop your study materials here</h3>
+
+                    <p>or select files from your computer</p>
+
+                    <label for="fileInput" class="upload-button">
+                        Browse Files
+                    </label>
+
+                    <input
+                        type="file"
+                        id="fileInput"
+                        accept=".pdf,.docx,.txt,.png,.jpg,.jpeg,.webp"
+                        multiple
+                        hidden
+                    >
+
+                    <p class="file-info">
+                        Supported: PDF, DOCX, TXT, PNG, JPG
+                    </p>
+
+                </div>
+
+                <div id="selectedFiles" class="selected-files"></div>
+
+                <div class="upload-actions">
+
+                    <button id="uploadButton" class="primary-button">
+                        Process Documents
+                    </button>
+
+                    <span id="uploadStatus">
+                        No documents processed yet.
+                    </span>
+
+                </div>
+
+            </section>
+
+
+            <!-- CHAT SECTION -->
+            <section class="content-card chat-card" id="chat">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Ask Your StudyMate</h2>
+                        <p>Ask anything from your uploaded study materials.</p>
+                    </div>
+
+                    <span class="step-number">02</span>
+                </div>
+
+                <div id="chatMessages" class="chat-messages">
+
+                    <div class="welcome-message">
+                        <div class="bot-avatar">AI</div>
+
+                        <div class="message-content">
+                            <strong>StudyMate AI</strong>
+
+                            <p>
+                                Hello! Upload your study materials first.
+                                Once processed, you can ask me questions
+                                about your notes.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="chat-input-area">
+
+                    <textarea
+                        id="questionInput"
+                        placeholder="Ask a question about your notes..."
+                        rows="2"
+                    ></textarea>
+
+                    <button id="sendButton" class="send-button">
+                        Send ↑
+                    </button>
+
+                </div>
+
+                <div class="chat-footer">
+                    AI answers are generated using your uploaded documents.
+                    Always verify important information with your notes.
+                </div>
+
+            </section>
+
+
+            <footer>
+                <p>StudyMate AI | Built using Python, Flask and RAG</p>
+            </footer>
+
+        </main>
+
+    </div>
+
+    <script src="/static/script.js"></script>
+
+</body>
+</html>

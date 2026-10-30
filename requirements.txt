@@ -1,0 +1,11 @@
+
+streamlit
+sentence-transformers
+numpy
+pypdf
+python-docx
+pytesseract
+Pillow
+requests
+flask
+flask-cors
